@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- LINKS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7671d15937.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./Public/CSS/profile.css">
+    <link rel="stylesheet" href="./Public/CSS/navbar.css">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./Public/assets/logo.png" type="image/x-icon">
+
+    <title>Flockmart | Profile</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="/home.html" class="nav-link">
+                <img src="./Public/assets/logo.png" alt="#">
+                <p class="link-text">Flockmart</p>
+            </a>
+        </div>    
+        <div class="nav-group">
+            <div class="nav-item" id="profile">
+                <a href="#" class="nav-link">
+                    <img src="https://img.icons8.com/office/80/000000/user-male-circle.png"/>
+                    <p class="link-text" id = "profile-text">Profile</p>
+                </a>
+            </div>
+            <div class="nav-item" id="cart">
+                <a href="./cart.html" class="nav-link">
+                    <img src="https://img.icons8.com/cotton/64/000000/shopping-cart--v1.png"/>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="not-logged-in hidden">
+        You're not logged in! <span class="login">Please <a href="./login.html">Login</a> to continue</span>
+    </div>
+
+    <div class="overlay"></div>
+    <div class="overlay-white"></div>
+    <div class="spinner"><img src="./Public/assets/loader.gif" alt=""></div>
+
+    <div class="profile-sidebar closed">
+        
+        <img class="cross-profile" src="https://img.icons8.com/office/80/000000/delete-sign.png"/>
+       
+        <div class="profile-img"><img src="./Public/assets/male_avatar.svg" alt="Image not found"></div>
+        <form class="profile-form" >
+            <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" name="username" id="user-name" autocomplete="off" placeholder="Username" disabled>
+            </div>
+            <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input type="text" name="email" id="user-email" autocomplete="off" placeholder="Email" disabled>
+            </div>
+            <div class="input-field">
+                <i class="fas fa-phone"></i>
+                <input type="text" name="phone" id="user-phone" autocomplete="off" placeholder="Phone" disabled>
+            </div>
+        </form>
+        <div class="logout-btn"><button class="logout">Logout</button></div>
+    </div>
+
+    <section class="main">
+        <div class="sidebar">
+            <div class="side-item orders-btn active"> <img src="https://img.icons8.com/cotton/64/000000/shopping-bag--v6.png"/> <p>Orders</p></div>
+            <div class="side-item order-history-btn"> <img src="https://img.icons8.com/dusk/64/000000/order-history.png"/> <p>Order history</p></div>
+            <div class="side-item payments-btn"> <img src="https://img.icons8.com/cotton/64/000000/cash-register.png"/> <p>Payments</p></div>
+            <!-- <div class="side-item favorites-btn"> <img src="https://img.icons8.com/flat-round/64/000000/hearts.png"/> <p>Favorites</p></div> -->
+            <div class="side-item addresses-btn"> <img src="https://img.icons8.com/plasticine/100/000000/address.png"/> <p>Addresses</p></div>
+        </div>
+
+        <section class="orders">
+            <div class="orders-container"></div>
+        </section>
+        
+        <div class="order-history">
+            <div class="order-history-container"></div>
+        </div>
+
+        <div class="payments">
+            <div class="payments-container"></div>
+        </div>
+
+
+        <!-- <div class="favorites">
+            <div class="favorite-card">
+                <img src="./Public/assets/fruit-shop.jpg" alt="Image not found">
+                 <div class="name-rating">
+                    <div class="shop-name">My Shop</div>
+                    <div class="shop-rating"><i class="fas fa-star"></i> 4.3</div>
+                 </div>
+                 <div class="shop-distance"><span class="distance">10</span> km</div>
+                 <button class="visit-shop">Visit Shop <i class="fas fa-store"></i></button>
+            </div>
+            <div class="favorite-card">
+                <img src="./Public/assets/fruit-shop.jpg" alt="Image not found">
+                 <div class="name-rating">
+                    <div class="shop-name">My Shop</div>
+                    <div class="shop-rating"><i class="fas fa-star"></i> 4.3</div>
+                 </div>
+                 <div class="shop-distance"><span class="distance">10</span> km</div>
+                 <button class="visit-shop">Visit Shop <i class="fas fa-store"></i></button>
+            </div>
+            <div class="favorite-card">
+                <img src="./Public/assets/fruit-shop.jpg" alt="Image not found">
+                 <div class="name-rating">
+                    <div class="shop-name">My Shop</div>
+                    <div class="shop-rating"><i class="fas fa-star"></i> 4.3</div>
+                 </div>
+                 <div class="shop-distance"><span class="distance">10</span> km</div>
+                 <button class="visit-shop">Visit Shop <i class="fas fa-store"></i></button>
+            </div>
+            <div class="favorite-card">
+                <img src="./Public/assets/fruit-shop.jpg" alt="Image not found">
+                 <div class="name-rating">
+                    <div class="shop-name">My Shop</div>
+                    <div class="shop-rating"><i class="fas fa-star"></i> 4.3</div>
+                 </div>
+                 <div class="shop-distance"><span class="distance">10</span> km</div>
+                 <button class="visit-shop">Visit Shop <i class="fas fa-store"></i></button>
+            </div>
+            <div class="favorite-card">
+                <img src="./Public/assets/fruit-shop.jpg" alt="Image not found">
+                 <div class="name-rating">
+                    <div class="shop-name">My Shop</div>
+                    <div class="shop-rating"><i class="fas fa-star"></i> 4.3</div>
+                 </div>
+                 <div class="shop-distance"><span class="distance">10</span> km</div>
+                 <button class="visit-shop">Visit Shop <i class="fas fa-store"></i></button>
+            </div>
+            <div class="favorite-card">
+                <img src="./Public/assets/fruit-shop.jpg" alt="Image not found">
+                 <div class="name-rating">
+                    <div class="shop-name">My Shop</div>
+                    <div class="shop-rating"><i class="fas fa-star"></i> 4.3</div>
+                 </div>
+                 <div class="shop-distance"><span class="distance">10</span> km</div>
+                 <button class="visit-shop">Visit Shop <i class="fas fa-store"></i></button>
+            </div>
+        </div> -->
+
+        <div class="addresses">
+            <div class="confirm-delete-address hidden">
+                <p class="delete-address-head">Are you sure?</p>
+                <p class="delete-address-text">This action cannot be undone</p>
+                <div class="delete-address-btn-container">
+                    <div class="confirm-container"><button class="confirm">Yes</button></div>
+                    <div class="decline-container"><button class="decline">No</button></div>
+                </div>
+            </div>
+            <div class="address-container"></div>
+        </div>
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./Public/JS/profile.js"></script>
+</body>
+</html>

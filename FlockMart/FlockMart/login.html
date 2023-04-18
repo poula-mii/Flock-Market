@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- LINKS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7671d15937.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./Public/CSS/login.css">
+    
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./Public/assets/logo.png" type="image/x-icon">
+
+    <title>Flockmart | Authorize</title>
+</head>
+<body>
+    <section class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="" class="sign-in" id="user-signin-form">
+                    <h2 class="title">Sign In</h2>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" id="email-signin" placeholder="Email" autocomplete="off" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password-signin" name="password" placeholder="Password" autocomplete="off" required>
+                    </div>
+
+                    <input type="submit" value="Login" class="btn solid" id="user-signin">
+
+                    <div class="sign-in-as-shop">
+                        <img src="https://img.icons8.com/officel/80/000000/shop.png"/>
+                        <p>Sign in as a Shop</p>
+                    </div>
+                </form>
+
+                <form action="" class="sign-up" id="user-signup-form">
+                    <h2 class="title">Sign Up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username-signup" name="username" placeholder="Username" autocomplete="off" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email-signup" name="email" placeholder="Email" autocomplete="off" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password-signup" name="password" placeholder="Password" autocomplete="off" required>
+                    </div>
+                    <div class="age-gender">
+                        <div class="input-field">
+                            <i class="fas fa-user-clock"></i>
+                            <input type="number" id="age-signup" name="age" placeholder="Age" autocomplete="off" required>
+                        </div>
+                        <div class="input-field">
+                            <i class="fas fa-user-secret"></i>
+                            <select name="gender" id="gender-signup" required>
+                                <option value="m">Male</option>
+                                <option value="f">Female</option>
+                                <option value="o">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-phone"></i>
+                        <input type="number" id="phone-signup" name="phone" placeholder="Phone" autocomplete="off" required>
+                    </div>
+
+                    <input type="submit" value="Sign Up" class="btn solid" id="user-signup">
+
+                    <div class="sign-up-as-shop">
+                        <img src="https://img.icons8.com/officel/80/000000/shop.png"/>
+                        <p>Sign up as a Shop</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>New here?</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum suscipit laboriosam asperiores. Ipsa minus, cum consequuntur recusandae quae repellat atque?</p>
+                    <button class="btn transparent" id="sign-up-btn">SIGN UP</button>
+                </div>
+
+                <img src="./Public/assets/rocket.svg" alt="Image not found" class="image">
+            </div>
+
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>One of us?</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum suscipit laboriosam asperiores. Ipsa minus, cum consequuntur recusandae quae repellat atque?</p>
+                    <button class="btn transparent" id="sign-in-btn">SIGN IN</button>
+                </div>
+
+                <img src="./Public/assets/desk.svg" alt="Image not found" class="image">
+            </div>
+        </div>
+    </section>
+
+    <div class="overlay"></div>
+    <div class="sign-up-container">
+        <i class="fas fa-times cross"></i>
+        <form class="shop-sign-up" id="shop-signup-form">
+            <div class="input-row">
+                <h2 class="title">Sign up as a Shop</h2>
+            </div>
+            <div class="input-row">
+                <div class="input-field">
+                    <i class="fas fa-store"></i>
+                    <input type="text" name="username" id="shop-name" placeholder="Shop Name" autocomplete="off" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-sticky-note"></i>
+                    <input type="text" name="description" id="shop-desc" placeholder="Shop Description" autocomplete="off">
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" id="shop-email" placeholder="Email" autocomplete="off">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" id="shop-password" placeholder="Password" autocomplete="off">
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-field">
+                    <i class="fas fa-phone"></i>
+                    <input type="number" name="phone" id="shop-phone" placeholder="Phone" autocomplete="off">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="owner" id="shop-owner" placeholder="Owner name" autocomplete="off">
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-field">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <input type="text" name="address" id="shop-address" placeholder="Address/Shop No. (name)" autocomplete="off" required>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-map-pin"></i>
+                    <input type="text" name="landmark" id="shop-landmark" placeholder="Landmark" autocomplete="off" required>
+                </div>
+            </div>
+
+            <div class="input-row"><button class="btn solid" id="get-address"><i class="fas fa-crosshairs"></i> Locate me</button></div>
+
+            <div class="input-row"><input type="submit" value="Sign Up" class="btn solid" id="shop-signup-btn"></div>
+        </form>
+    </div> 
+
+    <div class="sign-in-container">
+        <i class="fas fa-times cross"></i>
+        <form class="shop-sign-in" id="shop-signin-form">
+            <h2 class="title">Sign In as a Shop</h2>
+            <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="shop-email-signin" placeholder="Email" autocomplete="off" required>
+            </div>
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" id="shop-password-signin" placeholder="Password" autocomplete="off" required>
+            </div>   
+            
+            <input type="submit" value="Sign In" class="btn solid" id="shop-signin-btn">
+        </form>
+    </div>    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./Public/JS/login.js"></script>
+</body>
+</html>

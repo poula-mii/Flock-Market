@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- LINKS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7671d15937.js" crossorigin="anonymous"></script>
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./Public/CSS/cart.css">
+    <link rel="stylesheet" href="./Public/CSS/navbar.css">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./Public/assets/logo.png" type="image/x-icon">
+
+    <title>Flockmart | Cart </title>
+</head>
+<body class="overlay-open">
+
+    <div class="overlay"></div>
+    <div class="overlay-white"></div>
+    <div class="spinner"><img src="./Public/assets/loader.gif" alt=""></div>
+
+    <div class="not-logged-in hidden">
+        <img class="cross" src="https://img.icons8.com/office/80/000000/delete-sign.png"/>
+        You're not logged in! <span class="login">Please <a href="./login.html">Login</a> to continue</span>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="./home.html" class="nav-link">
+                <img src="./Public/assets/logo.png" alt="#">
+                <p class="link-text">Flockmart</p>
+            </a>
+        </div>
+        
+        <div class="nav-group">
+            <div class="nav-item" id="profile">
+                <a href="./profile.html" class="nav-link">
+                    <img src="https://img.icons8.com/office/80/000000/user-male-circle.png"/>
+                    <p class="link-text" id="profile-text">Profile</p>
+                </a>
+            </div>
+            <div class="nav-item" id="cart">
+                <a href="#" class="nav-link">
+                    <img src="https://img.icons8.com/cotton/64/000000/shopping-cart--v1.png"/>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="main">
+
+        <div class="address">
+            <div class="address-head"> <img src="https://img.icons8.com/plasticine/100/000000/address.png"/> Choose a delivery address</div>
+            <div class="address-grid"></div>
+        </div>
+
+        <div class="cart-items">
+            <div class="no-items-in-cart hidden">
+                <img src="./Public/assets/empty-cart.svg" alt="">
+                <p>No items in cart</p>
+                <p>Start <a href="./home.html">shopping</a> now!</p>
+            </div>
+
+            <div class="cart-overlay hidden"></div>
+            <div class="cart-spinner hidden"><img src="./Public/assets/loader.gif" alt=""></div>
+            
+            <div class="shop-details">
+                <img class="shop-image" src="./Public/assets/fruit-shop.jpg" alt="Image not found">
+            <div class="shop-name">My shop</div>
+            </div>
+            
+            <div class="cart-container">
+                <div class="items-container">
+                    <div class="item">
+                        <div class="item-name">Spring onions</div>
+                        <div class="item-quantity">
+                            <div class="increase-container">
+                                <div class="decrease-quantity">-</div>
+                                <div class="current-quantity">x</div>
+                                <div class="increase-quantity">+</div>
+                            </div>
+                        </div>
+                        <div class="item-cost">&#8377;200</div>
+                    </div>
+                </div>
+                <hr>
+                <div class="billing-container">
+                    <div class="bill-details">
+                        <div class="bill-head">Bill Details</div>
+                        <div class="total">
+                            <p class="item-total-text">Item Total</p>
+                            <p class="item-total-cost">&#8377;400</p>
+                        </div>
+                        <div class="delivery-fee">
+                            <p class="delivery-text">Delivery fee</p>
+                            <p class="delivery-cost">&#8377;0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="to-pay">
+                <div class="to-pay-text">To Pay</div>
+                <div class="to-pay-cost">&#8377; 400</div>
+            </div>
+        </div>
+
+        <div class="delivery-address">
+            <div class="delivery-head">
+                <p>Delivery address</p>
+                <button class="change">Change</button>
+            </div>
+            <div class="delivery-main">
+                <p class="type">Home</p>
+                <div class="type-address">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti fugit sint nobis illo aliquid et perferendis at distinctio nemo commodi!
+                </div>
+            </div>
+        </div>
+
+        <div class="down-arrow"><img src="https://img.icons8.com/dusk/64/000000/low-priority.png"/></div>
+
+        <div class="payment-initial">
+            <img src="https://img.icons8.com/fluent/96/000000/card-wallet.png"/>
+            Payment
+        </div>
+
+        <div class="payment-methods">
+            <div class="payment-head"><img src="https://img.icons8.com/fluent/96/000000/card-wallet.png"/> Choose payment method</div>
+            <div class="payments-main">
+                <div class="payments-sidebar">
+                    <div class="payment-option cod-btn chosen">Cash on delivery</div>
+                    <div class="payment-option netbanking-btn">Netbanking</div>
+                </div>
+                <div class="payments-all">
+                    <div class="cod">
+                        <img src="./Public/assets/cash-payment.svg" alt="Image not found">
+                        <p class="cod-text">Pay using cash</p>
+                        <button class="pay-btn">Pay <span class="amount">&#8377; 200</span></button>
+                    </div>
+                    <div class="netbanking">
+                        <img src="./Public/assets/cashless-payment.svg" alt="Image not found">
+                        <p class="netbanking-text">Pay via the internet</p>
+                        <button class="pay-btn">Pay <span class="amount">&#8377; 200</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="payment-confirmation hidden">
+            <div class="confirm-img-container">
+                <img src="./Public/assets/icons8-rocket-unscreen.gif" alt="">
+            </div>
+            <p class="confirm-head">Are you sure?</p>
+            <p class="confirm-text">The order will get placed. Please confirm as this action cannot be undone</p>
+            <div class="confirm-btn-container">
+                <div class="confirm-btn"><button class="confirm">Confirm</button></div>
+                <div class="decline-btn"><button class="decline">Decline</button></div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="add-new-address-container hidden">
+        <i class="fas fa-times cross"></i>
+        <form class="add-address-form">
+            <div class="title">Add new address</div>
+            <div class="input-field">
+                <i class="fas fa-home"></i>
+                <input type="text" name="flat-no" id="flat-no" placeholder="Door / Flat No." autocomplete="off">
+            </div>
+            <div class="input-field">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" name="locality" id="locality" placeholder="Locality" autocomplete="off">
+            </div>
+            <div class="input-field">
+                <i class="fas fa-map-pin"></i>
+                <input type="text" name="landmark" id="landmark" placeholder="Landmark" autocomplete="off">
+            </div>
+            <div class="radio">
+                <input class="radio-input" type="radio" name="type" id="home" value="home">
+                <label class="radio-label" for="home"><i class="fas fa-home"></i> Home</label>
+                <input class="radio-input" type="radio" name="type" id="work" value="work">
+                <label class="radio-label" for="work"><i class="fas fa-briefcase"></i> Work</label>
+                <input class="radio-input" type="radio" name="type" id="other" value="other" checked>
+                <label class="radio-label" for="other"><i class="fas fa-map-marker-alt"></i> Other</label>
+            </div>
+            <button class="add-new-address-btn">Add</button>
+        </form>
+    </div>
+
+    <footer> <p>Terms and conditions apply</p> </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./Public/JS/cart.js"></script>
+</body>
+</html>

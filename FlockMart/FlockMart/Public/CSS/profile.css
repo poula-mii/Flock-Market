@@ -1,0 +1,577 @@
+:root {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    --bg-primary: #E8EBF3;
+    --bg-primary-translucent: #ced6ee;
+    --green-primary: #32be8f;
+    --blue-primary: #5C8AFF;
+    --blue-primary-translucent: #5c8affb0;
+    --gray-primary: #a5a5a5;
+    --name-color: #515D76;
+    --name-color-dark: #292f3b;
+    --yellow-primary: #F4D03F;
+    --yellow-hover: #F5B041;
+    --green-primary: #58D68D;
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-primary);
+    width: 100%;
+    height: 100%;
+    min-height: 100vh !important;
+    color: #000;
+    position: relative;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--blue-primary);
+}
+
+.not-logged-in {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FFF;
+    z-index: 100;
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+    color: var(--name-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.not-logged-in.hidden {
+    display: none;
+}
+
+/* -----------PROFILE SIDEBAR------------------- */
+
+.profile-sidebar {
+    position: absolute;
+    top: 0;
+    z-index: 25;
+    right: 0;
+    background-color: #fff;
+    width: 35%;
+    height: 100vh;
+    padding: 2rem;
+    box-shadow: 0 0 0.5rem var(--gray-primary);
+    transition: 400ms ease-in-out;
+    overflow-y: scroll;
+}
+
+.closed {
+    transition: 400ms ease-in-out;
+    right: -100%;
+}
+
+.profile-sidebar .profile-img {
+    height: fit-content;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-sidebar .profile-img img {
+    height: 10rem;
+    width: 10rem;
+    border: none;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logout-btn {
+    text-align: center;
+}
+
+.logout {
+    background-color: #EC7063;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFF;
+    border: none;
+    border-radius: 0.45rem;
+    cursor: pointer;
+}
+
+.logout:hover {
+    background-color: #ee412d;
+}
+
+/* ------------------IMPUTS--------------------- */
+
+.input-field {
+    max-width: 380px;
+    width: 100%;
+    height: 55px;
+    margin: 10px 0;
+    background-color: #F0F0F0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    transition: 150ms linear;
+}
+
+.input-field:hover, .input-field:focus {
+    box-shadow: 0 0 0.3em var(--blue-primary-translucent);
+}
+
+.input-field i {
+    text-align: center;
+    line-height: 55px;
+    color: #ACACAC;
+    font-size: 1.1rem;
+}
+
+.input-field input {
+    background: none;
+    border: none;
+    outline: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.input-field input:disabled {
+    color: #aaa;
+}
+
+.input-field input::placeholder {
+    color: #aaa;
+    font-weight: 500;
+}
+
+.cross-profile {
+    position: absolute;
+    left: 2%;
+    top: 2%;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
+.cross-profile:hover{
+    transition: 150ms ease-in-out;
+    transform: scale(1.15);
+}
+
+/* ---------------MAIN--------------------- */
+
+.main {
+    height: 100%;
+    width: 100%;
+    padding-top: 7rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+
+.sidebar {
+    position: fixed;
+    background-color: #FFF;
+    border-radius: 0.45rem;
+    border: none;
+    width: 20%;
+    padding: 1rem;
+    height: 80%;
+    box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+
+.side-item {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.45em;
+    transition: 150ms linear;
+    margin-top: 0.2rem;
+}
+
+.side-item p {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.side-item img {
+    height: 2rem;
+    width: 2rem;
+    margin-right: 1rem;
+}
+
+.side-item:hover {
+    background-color: var(--blue-primary-translucent);
+}
+
+.side-item.active {
+    background-color: var(--blue-primary-translucent);
+}
+
+/* --------------------OVERLAY/SPINNER--------------------- */
+
+.overlay, .overlay-white {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 20;
+}
+
+.overlay-white {
+    background-color: #FFF;
+}
+
+.overlay-open {
+    overflow: hidden;
+}
+
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------------ORDERS AND OTHER SECTIONS----------------- */
+
+.orders, .favorites, .payments, .addresses, .profile, .order-history {
+    background-color: #FFF;
+    /* height: 97%; */
+    min-height: 92%;
+    width: 75%;
+    margin-left: 24rem;
+    overflow-y: scroll;
+    box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 0.45rem;
+    padding: 2rem;
+}
+
+.order-card, .payment-card {
+    background-color: #FFF;
+    width: 100%;
+    height: fit-content;
+    border-bottom: 0.1rem solid var(--bg-primary-translucent);
+    margin-bottom: 1rem;
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: none;
+    padding: 0;
+    border: 1px solid #ACACAC;
+    border-radius: 0.45rem;
+}
+
+.order-shop-details {
+    background-color: var(--bg-primary-translucent);
+    padding: 1rem;
+    width: 100%;
+    border: none;
+    border-top-left-radius: 0.45rem;
+    border-top-right-radius: 0.45rem;
+}
+
+.order-shop-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.order-item-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid var(--bg-primary-translucent);
+}
+
+.order-item-details:last-child {
+    border-bottom:  none;
+}
+
+.order-name-container {
+    width: 30%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-right: 1rem;
+    color: var(--name-color-dark);
+}
+
+.order-cost {
+    width: 15%;
+}
+
+.order-name-container img {
+    height: 3rem;
+    width: 3rem;
+    margin-right: 1rem;
+}
+
+.order-quantity, .order-cost, .payments-date, .payments-cost {
+    margin-right: 1rem;
+    color: var(--name-color-dark);
+}
+
+.shopID-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-right: 1rem;
+    color: var(--name-color-dark);
+}
+
+.payments-shopID {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.favorites {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+.favorite-card {
+    height: fit-content;
+    width: 100%;
+    background-color: var(--bg-primary-translucent);
+    padding: 0.625rem;
+    border: none;
+    border-radius: 0.45rem;
+    transition: 150ms linear;
+}
+
+.favorite-card:hover, .address-card:hover {
+    box-shadow: 0.3rem 0.3rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+.favorite-card img {
+    width: 100%;
+    height: 55%;
+}
+
+.name-rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 0 1rem;
+}
+
+.shop-name {
+    display: inline-block;
+    width: fit-content;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--name-color);
+}
+
+.shop-rating {
+    padding: 0.4rem 0.5rem;
+    border: none;
+    border-radius: 0.2rem;
+    background-color: var(--green-primary);
+    color: #FFF;
+}
+
+.shop-distance {
+    font-size: 1rem;
+    font-weight: 300;
+    padding-left: 1rem;
+}
+
+.visit-shop {
+    background-color: var(--yellow-primary);
+    border: none;
+    border-radius: 0.45rem;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    margin-top: 0.625rem;
+    cursor: pointer;
+    transition: 100ms linear;
+}
+
+.visit-shop:hover {
+    background-color: var(--yellow-hover);
+}
+
+.address-container {
+    height: fit-content;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.confirm-delete-address {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 22;
+    transform: translate(-50%, -50%);
+    background-color: var(--blue-primary);
+    padding-top: 1.5rem;
+    border: none;
+    border-radius: 0.45rem;
+    text-align: center;
+}
+
+.confirm-delete-address.hidden {
+    display: none;
+}
+
+.delete-address-head {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #FFF;
+    padding: 0 2rem;
+}
+
+.delete-address-text {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #FFF;
+    padding-bottom: 2rem;
+}
+
+.delete-address-btn-container {
+    width: 100%;
+    background-color: #FFF;
+    border-radius: 0.45rem;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-container, .decline-container {
+    width: 49%;
+}
+
+.confirm-container {
+    border-right: 1px solid #a5a5a5;
+}
+
+.confirm, .decline {
+    font-size: 1.2rem;
+    background-color: #FFF;
+    border: none;
+    padding: 0.5rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.confirm {
+    color: var(--green-primary);
+}
+
+.decline {
+    color: #EC7063;
+}
+
+.confirm:hover , .decline:hover {
+    font-weight: 600;
+}
+
+.address-card {
+    background-color: var(--bg-primary-translucent);
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 0.45rem;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 1rem;
+    transition: 100ms linear;
+}
+
+.address-card i {
+    height: 100%;
+    padding-right: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--blue-primary);
+}
+
+.address-card .address-text {
+    width: 100%;
+}
+
+.address-card p {
+    font-size: 0.75rem;
+}
+
+.address-card .home, .address-card .work, .address-card .other {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.delete-address {
+    background-color: #EC7063;
+    padding: 0.4rem 0.5rem;
+    border: none;
+    border-radius: 0.45rem;
+    outline: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #FFF;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: 150ms linear;
+}
+
+.delete-address:hover {
+    background-color: #ee412d;
+}
+
+.no-products-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--name-color);
+}

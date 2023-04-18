@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <!-- LINKS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7671d15937.js" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./Public/CSS/shop.css">
+    
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./Public/assets/logo.png" type="image/x-icon">
+
+    <title>Flockmart | Shop</title>
+</head>
+<body class="overlay-open">
+    <nav class="navbar">
+        <ul class="navbar-nav">
+            <li class="logo">
+                <a href="#" class="nav-link">
+                    <span class="link-text">Flockmart</span>
+                    <svg
+                        aria-hidden="true"
+                        focusable="false"
+                        data-prefix="fad"
+                        data-icon="angle-double-right"
+                        role="img"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 448 512"
+                        class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x"
+                    >
+                        <g class="fa-group">
+                        <path
+                            fill="currentColor"
+                            d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z"
+                            class="fa-secondary"
+                        ></path>
+                        <path
+                            fill="currentColor"
+                            d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z"
+                            class="fa-primary"
+                        ></path>
+                        </g>
+                    </svg>
+                </a>
+            </li>
+            <li class="nav-item" id="dashboard-btn">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    <span class="link-text">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item"  id="statistics-btn">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="link-text">Statistics</span>
+                </a>
+            </li>
+            <li class="nav-item" id="orders-btn">
+                <a href="#" class="nav-link" >
+                    <i class="fas fa-shipping-fast"></i>
+                    <span class="link-text">Orders</span>
+                </a>
+            </li>
+            <li class="nav-item" id="history-btn">
+                <a href="#" class="nav-link" >
+                    <i class="fas fa-history"></i>
+                    <span class="link-text">History</span>
+                </a>
+            </li>
+            <li class="nav-item" id="products-btn">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-carrot"></i>
+                    <span class="link-text">Products</span>
+                </a>
+            </li>
+            <li class="nav-item" id="requests-btn">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-clipboard"></i>
+                    <span class="link-text">Requests</span>
+                </a>
+            </li>
+            <li class="nav-item" id="profile-btn">
+                <a href="#" class="nav-link">
+                    <i class="fas fa-user-circle"></i>
+                    <span class="link-text">Profile</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="shop-id"></div>
+    <div class="not-logged-in">
+        You're not logged in!
+        <span class="login">Please <a href="./login.html">Login</a> to continue</span>
+    </div>
+
+    <div class="overlay"></div>
+    <div class="overlay-white"></div>
+    <div class="spinner"><img src="./Public/assets/loader.gif" alt=""></div>
+
+    <div class="add-products-container hidden">
+        <i class="fas fa-times cross"></i>
+        <div class="title">Add Products</div>
+        <form class="product-form" id="add-products-form">
+            <div class="main-container">
+                <div class="general-container">
+                    <div class="input-field">
+                        <i class="fas fa-carrot"></i>
+                        <input type="text" name="name" id="item-name" placeholder="Item Name" autocomplete="off">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-sticky-note"></i>
+                        <input type="text" name="desc" id="item-desc" placeholder="Item Description" autocomplete="off">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <input type="number" name="cost" id="item-cost" placeholder="Item Cost" autocomplete="off">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-box-open"></i>
+                        <input type="number" name="quantity" id="item-quantity" placeholder="Item Quantity" autocomplete="off">
+                    </div>
+                </div>
+                <div class="image-container">
+                    <div class="image-preview" id="imagePreview">
+                        <img src="" alt="Image Preview" class="preview-image">
+                        <span class="preview-text">Image Preview</span>
+                    </div>
+                    <input type="file" name="inpFile" id="inpFile" accept="image/*">
+                    <div class="custom-input">Choose an image</div>
+                </div>
+            </div>
+            <div class="radio">
+                <input class="radio-input" type="radio" name="tag" id="fruits" value="fruits" checked="checked">
+                <label class="radio-label" for="fruits"><i class="fas fa-apple-alt"></i> Fruits</label>
+
+                <input class="radio-input" type="radio" name="tag" id="vegetables" value="vegetables">
+                <label class="radio-label" for="vegetables"><i class="fas fa-pepper-hot"></i> Vegetables</label>
+
+                <input class="radio-input" type="radio" name="tag" id="meat" value="meat">
+                <label class="radio-label" for="meat"><i class="fas fa-drumstick-bite"></i> Meat</label>
+
+                <input class="radio-input" type="radio" name="tag" id="dairy" value="dairy">
+                <label class="radio-label" for="dairy"><i class="fas fa-bread-slice"></i> Dairy</label>
+
+                <input class="radio-input" type="radio" name="tag" id="snacks" value="snacks">
+                <label class="radio-label" for="snacks"><i class="fas fa-cookie"></i> Snacks</label>
+
+                <input class="radio-input" type="radio" name="tag" id="drinks" value="drinks">
+                <label class="radio-label" for="drinks"><i class="fas fa-beer"></i> Drinks</label>
+            </div>
+            <div class="btn-container"><button class="add-button">Add Product</button></div>
+        </form>
+    </div>
+
+    <section class="main">
+        
+        <section class="statistics">
+            <div class="profits-container">
+                <div class="profits-daily">
+                    <p class="profits-head">Daily Profits</p>
+                    <p class="daily-profit">12345</p>
+                </div>
+                <div class="profits-monthly">
+                    <p class="profits-head">Monthly Profits</p>
+                    <p class="monthly-profit">12345</p>
+                </div>
+                <div class="profits-yearly">
+                    <p class="profits-head">Yearly Profits</p>
+                    <p class="yearly-profit">12345</p>
+                </div>
+            </div>
+            <div class="daily-container"><canvas id="daily" height="10" width="10"></canvas></div>
+            <div class="yearly-monthly-container">
+                <div class="monthly-container"><canvas id="monthly" height="400" width="400"></canvas></div>
+                <div class="yearly-container"><canvas id="yearly" height="400" width="400"></canvas></div>
+            </div>
+        </section>
+
+        <section class="products">
+            <div class="confirm-delete-product hidden">
+                <p class="delete-product-head">Are you sure?</p>
+                <p class="delete-product-text">This action cannot be undone</p>
+                <div class="delete-product-btn-container">
+                    <div class="confirm-container"><button class="confirm-product-delete">Yes</button></div>
+                    <div class="decline-container"><button class="decline-product-delete">No</button></div>
+                </div>
+            </div>
+            <div class="head"> 
+                <img src="https://img.icons8.com/dusk/64/000000/open-box.png"/> My Products 
+                <div class="add-products-btn">Add Products</div>
+            </div>
+
+            <div class="filter-tags">
+                <div class="tag active" id="all-products">All</div>
+                <div class="tag" id="fruits-and-veg">Fruits and Veg</div>
+                <div class="tag" id="meat-products">Meat</div>
+                <div class="tag" id="dairy-products">Dairy</div>
+                <div class="tag" id="snacks-products">Snacks</div>
+                <div class="tag" id="drinks-products">Drinks</div>
+            </div>
+
+            <div class="all-container"></div>
+            <div class="fruits-veggies-container"></div>
+            <div class="meat-container"></div>
+            <div class="dairy-container"></div>
+            <div class="snacks-container"></div>
+            <div class="drinks-container"></div>
+        </section>
+
+        <section class="requests">
+            <div class="confirm-delete-request hidden">
+                <p class="delete-request-head">Are you sure?</p>
+                <p class="delete-request-text">This action cannot be undone</p>
+                <div class="delete-request-btn-container">
+                    <div class="confirm-container"><button class="confirm-request-delete">Yes</button></div>
+                    <div class="decline-container"><button class="decline-request-delete">No</button></div>
+                </div>
+            </div>
+            <div class="head"> 
+                <img src="https://img.icons8.com/officel/80/000000/demand.png"/> Requests 
+            </div>
+            <div class="requests-container"></div>
+        </section>
+
+        <section class="orders">
+            <div class="delivery-confirmation hidden">
+                <div class="confirm-img-container">
+                    <img src="./Public/assets/truck.gif" alt="">
+                </div>
+                <p class="confirm-head">Are you sure?</p>
+                <p class="confirm-text">The order will be considered delivered. Please confirm as this action cannot be undone</p>
+                <div class="confirm-btn-container">
+                    <div class="confirm-btn"><button class="confirm-delivery">Confirm</button></div>
+                    <div class="decline-btn"><button class="decline-delivery">Decline</button></div>
+                </div>
+            </div>
+            <div class="head"> 
+                <img src="./Public/assets/box.svg"/> Pending Orders 
+            </div>
+            <div class="orders-container"></div>
+            
+        </section>
+
+        <section class="history">
+            <div class="history-head"> 
+                <div class="order-history">
+                    <img src="https://img.icons8.com/dusk/64/000000/order-history.png"/> Order History 
+                </div>
+            </div>
+            <div class="order-history-container"></div>
+
+            <div class="payment-history-container"></div>
+            
+        </section>
+
+        <section class="profile">
+            <div class="img-container">
+                <div class="profile-img"><img src="./Public/assets/male_avatar.svg" alt="Image not found"></div>
+                <div class="items-sold">
+                    <p class="sold-head">Total items sold</p>
+                    <span class="count" id="total-sold">12345</span>
+                </div>
+                <div class="total-clicks">
+                    <p class="clicks-head">Total clicks</p>
+                    <span class="count" id="total-clicks">12345</span>
+                </div>
+            </div>
+            <div class="details-container">
+                <div class="input-row">
+                    <div class="row-elements">
+                        <label for="shop-name">Shop Name</label>
+                        <input type="text" name="name" id="shop-name" placeholder="Shop name" disabled>
+                    </div>
+                    <div class="row-elements">
+                        <label for="shop-desc">Shop Description</label>
+                        <input type="text" name="description" id="shop-desc" placeholder="Shop description" disabled>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="row-elements">
+                        <label for="shop-email">Email</label>
+                        <input type="email" name="email" id="shop-email" placeholder="Email" disabled>
+                    </div>
+                    <div class="row-elements">
+                        <label for="shop-owner">Shop Owner</label>
+                        <input type="text" name="owner" id="shop-owner" placeholder="Shop Owner" disabled>
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="row-elements">
+                        <label for="shop-address">Shop Address</label>
+                        <input type="text" name="address" id="shop-address" placeholder="Shop Address" disabled>
+                    </div>
+                    <div class="row-elements">
+                        <label for="shop-desc">Landmark</label>
+                        <input type="text" name="landmark" id="shop-landmark" placeholder="Landmark" disabled>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="logout-btn-container"><button class="logout">Logout</button></div>
+
+        </section>
+
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" ></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js" integrity="sha512-d8F1J2kyiRowBB/8/pAWsqUl0wSEOkG5KATkVV4slfblq9VRQ6MyDZVxWl2tWd+mPhuCbpTB4M7uU/x9FlgQ9Q==" crossorigin="anonymous"></script>
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="./Public/JS/shop.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.3.0/dist/chart.min.js"></script>
+
+    <script src="./Public/JS/csv.js"></script>
+    
+</body>
+</html>

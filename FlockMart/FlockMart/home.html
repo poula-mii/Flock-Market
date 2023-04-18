@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- LINKS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7671d15937.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+        integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./Public/CSS/home.css">
+    <link rel="stylesheet" href="./Public/CSS/navbar.css">
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="./Public/assets/logo.png" type="image/x-icon">
+
+    <title>Flockmart | Home</title>
+</head>
+
+<body class="overlay-open">
+
+    <div class="overlay"></div>
+    <div class="overlay-white"></div>
+    <div class="spinner"><img src="./Public/assets/loader.gif" alt=""></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="./home.html" class="nav-link">
+                <img src="./Public/assets/logo.png" alt="#">
+                <p class="link-text">Flockmart</p>
+            </a>
+        </div>
+        <div class="nav-item" id="location-btn">
+            <a href="#" class="nav-link">
+                <img src="https://img.icons8.com/office/80/000000/worldwide-location--v1.png" />
+                <p class="link-text" id="location-text">Location</p>
+            </a>
+        </div>
+
+        <div class="nav-group">
+            <div class="nav-item" id="search-btn">
+                <a href="#" class="nav-link">
+                    <img src="https://img.icons8.com/fluent-systems-regular/48/000000/search--v1.png" />
+                    <p class="link-text">Search</p>
+                </a>
+            </div>
+            <div class="nav-item" id="profile">
+                <a href="./profile.html" class="nav-link">
+                    <img src="https://img.icons8.com/office/80/000000/user-male-circle.png" />
+                    <p class="link-text" id="profile-text">Profile</p>
+                </a>
+            </div>
+            <div class="nav-item" id="login-btn">
+                <a href="./login.html" class="nav-link">
+                    <img src="https://img.icons8.com/office/80/000000/user-male-circle.png" />
+                    <p class="link-text" id="profile-text">Login</p>
+                </a>
+            </div>
+            <div class="nav-item" id="cart">
+                <a href="./cart.html" class="nav-link">
+                    <img src="https://img.icons8.com/cotton/64/000000/shopping-cart--v1.png" />
+                </a>
+            </div>
+            <div class="nav-item" id="sun">
+                <a href="#" class="nav-link">
+                    <img src="https://img.icons8.com/color/344/sun--v1.png" />
+                </a>
+            </div>
+            <div class="nav-item hidden" id="moon">
+                <a href="#" class="nav-link">
+                    <img
+                        src="https://img.icons8.com/external-flatart-icons-lineal-color-flatarticons/344/external-moon-gym-flatart-icons-lineal-color-flatarticons.png" />
+                </a>
+            </div>
+            <div class="nav-item" id="audio">
+                <a href="#" class="nav-link">
+                    <img src="https://img.icons8.com/office/452/high-volume--v1.png" />
+                </a>
+            </div>
+            <div class="nav-item hidden" id="no-audio">
+                <a href="#" class="nav-link">
+                    <img src="https://img.icons8.com/office/452/no-audio--v1.png" />
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="location-sidebar closed">
+        <p class="location-head">Enter your location</p>
+        <img class="cross" id="cross" src="https://img.icons8.com/office/80/000000/delete-sign.png" />
+        <div class="input-buffer">
+            <input type="text" name="location" id="location" placeholder="Search for area, street etc.">
+            <button class="search-location">
+                <img src="https://img.icons8.com/flat-round/64/000000/arrow--v1.png" />
+            </button>
+        </div>
+        <div class="location-buffer"></div>
+        <div class="current-location">
+            <img src="https://img.icons8.com/office/80/000000/define-location.png" />
+            <div class="location-text-buffer">
+                <p class="current-location-text">Get current location</p>
+                <span>Using GPS</span>
+            </div>
+        </div>
+        <div class="gps-location-buffer"></div>
+    </div>
+
+    <section class="search-section hidden">
+        <div id="esc-btn">
+            <img src="https://img.icons8.com/office/80/000000/delete-sign.png" />
+            <p>ESC</p>
+        </div>
+        <div class="search-input-container">
+            <input type="text" name="search" id="search-input" autocomplete="off"
+                placeholder="Search for Items or Shops">
+            <div class="clear-btn">CLEAR</div>
+            <img id="search-input-btn" src="https://img.icons8.com/fluent-systems-regular/48/000000/search--v1.png" />
+        </div>
+
+        <div class="search-main">
+            <div class="recent-search">
+                Recent Search
+                <div class="recent-tag">Sushi</div>
+            </div>
+            <div class="search-options hidden">
+                <div class="search-option active" id="shops-btn"> <img
+                        src="https://img.icons8.com/office/80/000000/shop.png" /> Shops</div>
+                <div class="search-option" id="products-btn"><img src="./Public/assets/box.svg" alt=""> Products</div>
+            </div>
+            <div class="search-shop-results hidden"></div>
+            <div class="search-product-results hidden"></div>
+        </div>
+
+    </section>
+
+    <section class="main">
+        <div class="request-carousel">
+            <div class="request">
+                <p class="request-head">Need something?</p>
+                <p class="request-desc">Why not send a request and we'll let the shops around you know right away!</p>
+                <button class="post-request-btn">Post a Request</button>
+            </div>
+            <div class="carousel">
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-text-container">
+                            <div class="slide-text">A single citrus plant can have as many as 60,000 flowers, but only 1
+                                per cent of those flowers turn into fruits</div>
+                        </div>
+                        <div class="slide-img"><img src="./Public/assets/lemon.jpg" alt=""></div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-text-container slide-2">
+                            <div class="slide-text">Milk will stay fresher if you add salt</div>
+                        </div>
+                        <div class="slide-img"><img src="./Public/assets/milk-bottle.jpg" alt=""></div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-text-container slide-3">
+                            <div class="slide-text">The banana is actually classified as a berry.
+                            </div>
+                        </div>
+                        <div class="slide-img"><img src="./Public/assets/banana.jpg" alt=""></div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-text-container slide-4">
+                            <div class="slide-text">There are 7500 varieties of apple all over the world.
+                            </div>
+                        </div>
+                        <div class="slide-img"><img src="./Public/assets/apple-basket.jpg" alt=""></div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-content">
+                        <div class="slide-text-container slide-5">
+                            <div class="slide-text">Strawberries may help reduce the risk of heart disease and certain
+                                cancers.
+                            </div>
+                        </div>
+                        <div class="slide-img"><img src="./Public/assets/strawberry.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="request-popup hidden">
+            <img class="cross-req" id = "cross-req" src="https://img.icons8.com/office/80/000000/delete-sign.png" />
+            <form class="request-form">
+                <div class="title"><img src="./Public/assets/delivery-man.svg" alt=""> What do you need? </div>
+                <div class="input-field">
+                    <i class="fas fa-carrot"></i>
+                    <input type="text" name="name" id="item-name" placeholder="Item Name" autocomplete="off">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-sticky-note"></i>
+                    <input type="text" name="desc" id="item-desc" placeholder="Item Description" autocomplete="off">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-box-open"></i>
+                    <input type="number" name="quantity" id="item-quantity" placeholder="Item Quantity"
+                        autocomplete="off">
+                </div>
+
+                <div class="btn-container"><button class="request-button">Send Request</button></div>
+            </form>
+        </div>
+
+        <section class="trending-shops">
+            <div class="head-buffer">
+                <p class="trending-head">Trending Products</p>
+            </div>
+            <hr>
+            <div class="trending-carousel"></div>
+        </section>
+
+        <section class="shops-around-you">
+            <p class="around-head">Shops around you</p>
+            <hr>
+            <div class="shops-container">
+                <div class="shop-card">
+                    <img src="./Public/assets/fruit-shop.jpg" alt="Image not found">
+                    <div class="name-rating">
+                        <div class="shop-name">My Shop</div>
+                        <div class="shop-rating"><i class="fas fa-star"></i> 4.3</div>
+                    </div>
+                    <div class="shop-distance"><span class="distance">10</span> km</div>
+                    <button class="visit-shop">Visit Shop <i class="fas fa-store"></i></button>
+                </div>
+                <div class="shop-card">
+                    <img src="./Public/assets/default.jpg" alt="Image not found">
+                    <div class="name-rating">
+                        <div class="shop-name">My Shop</div>
+                        <div class="shop-rating"><i class="fas fa-star"></i> 4.3</div>
+                    </div>
+                    <div class="shop-distance"><span class="distance">10</span> km</div>
+                    <button class="visit-shop">Visit Shop <i class="fas fa-store"></i></button>
+                </div>
+                <div class="shop-card">
+                    <img src="./Public/assets/fruit-shop.jpg" alt="Image not found">
+                    <div class="name-rating">
+                        <div class="shop-name">My Shop</div>
+                        <div class="shop-rating"><i class="fas fa-star"></i> 4.3</div>
+                    </div>
+                    <div class="shop-distance"><span class="distance">10</span> km</div>
+                    <button class="visit-shop">Visit Shop <i class="fas fa-store"></i></button>
+                </div>
+                <div class="shop-card">
+                    <img src="./Public/assets/fruit-shop.jpg" alt="Image not found">
+                    <div class="name-rating">
+                        <div class="shop-name">My Shop</div>
+                        <div class="shop-rating"><i class="fas fa-star"></i> 4.3</div>
+                    </div>
+                    <div class="shop-distance"><span class="distance">10</span> km</div>
+                    <button class="visit-shop">Visit Shop <i class="fas fa-store"></i></button>
+                </div>
+                <div class="shop-card">
+                    <img src="./Public/assets/fruit-shop.jpg" alt="Image not found">
+                    <div class="name-rating">
+                        <div class="shop-name">My Shop</div>
+                        <div class="shop-rating"><i class="fas fa-star"></i> 4.3</div>
+                    </div>
+                    <div class="shop-distance"><span class="distance">10</span> km</div>
+                    <button class="visit-shop">Visit Shop <i class="fas fa-store"></i></button>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+    <footer>
+        <p>Terms and conditions apply</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"
+        integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./Public/JS/home.js"></script>
+</body>
+
+</html>
